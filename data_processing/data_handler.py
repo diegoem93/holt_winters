@@ -30,6 +30,7 @@ def get_time_series(df_info):
 
 def fill_values(df_ts):
     df_ts = df_ts.fillna(0)
+    #df_ts = df_ts.fillna(method='ffill')
     return df_ts
 
 def get_stores(data):

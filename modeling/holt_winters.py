@@ -19,10 +19,10 @@ from data_handler import get_data, get_stores, get_families, get_time_series
 # holt winters
 def holt_winters_forecast(data, forecast_days):
     # create class
-    model = ExponentialSmoothing(data)
+    model = ExponentialSmoothing(data,seasonal="add", seasonal_periods=7)
     # fit model
     model_fit = model.fit()
     # make prediction
-    yhat = model_fit.predict(forecast_days)
+    yhat = model_fit.forecast(forecast_days)
     return yhat
 
